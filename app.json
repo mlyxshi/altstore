@@ -1,6 +1,6 @@
 {
-    "name": "mlyxshi",
-    "identifier": "com.mlyxshi.source",
+    "name": "mlyxdev",
+    "identifier": "com.mlyxdev.source",
     "apps": [
       {
         "name": "dart_simple_live",
