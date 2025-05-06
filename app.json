@@ -1,0 +1,13 @@
+{
+    "name": "mlyxdev",
+    "tintColor": "#4185A9",
+    "apps": [
+        {
+            "name": "dart_simple_live",
+            "bundleIdentifier": "com.xycz.simple-live",
+            "versions": "1.8.3",
+            "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v1.8.3/ios_no_sign.ipa"
+        }
+    ]
+
+}
