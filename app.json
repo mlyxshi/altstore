@@ -1,14 +1,31 @@
 {
-    "name": "mlyxdev",
+    "name": "OwO Source",
+    "identifier": "network.owo.repo",
+    "sourceURL": "https://repo.owo.network",
+    "iconURL": "https://r2.qwq.mx/files/owo-logo3.png",
+    "sourceicon": "https://r2.qwq.mx/files/owo-logo3.png",
+    "website": "https://owo.network",
+    "subtitle": "Biggest Updated Modified IPA Library for Sideloading - OwO.Network",
+    "META": {
+        "repoName": "OwO Source",
+        "repoIcon": "https://r2.qwq.mx/files/owo-logo3.png"
+    },
     "apps": [
-      {
-        "name": "dart_simple_live",
-        "bundleIdentifier": "com.xycz.simple-live",
-        "developerName": "xiaoyaocz",
-        "version": "1.8.3",
-        "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v1.8.3/ios_no_sign.ipa",
-        "localizedDescription": "",
-        "iconURL": "https://github.com/xiaoyaocz/dart_simple_live/raw/master/assets/logo.png"
-      }
+        {
+            "name": "Instagram",
+            "realBundleID": "com.burbn.instagram",
+            "bundleID": "com.burbn.instagram",
+            "bundleIdentifier": "com.burbn.instagram",
+            "version": "378.0.0",
+            "versionDate": "2025-05-01",
+            "fullDate": "20250501222732",
+            "size": 267498787,
+            "down": "https://github.com/OwO-Network/Repo/releases/download/2025-05-01/Instagram_378.0.0_Regram_1.0-b29_%40repo.owo.network.ipa",
+            "downloadURL": "https://github.com/OwO-Network/Repo/releases/download/2025-05-01/Instagram_378.0.0_Regram_1.0-b29_%40repo.owo.network.ipa",
+            "developerName": "",
+            "localizedDescription": "Injected with Regram 1.0-b29",
+            "icon": "https://raw.githubusercontent.com/owo-network/Repo/main/icons/com.burbn.instagram.png",
+            "iconURL": "https://raw.githubusercontent.com/owo-network/Repo/main/icons/com.burbn.instagram.png"
+        }
     ]
-  }
+}
