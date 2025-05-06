@@ -10,5 +10,42 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: |
-        cat version.json |jq  ".dart_simple_live"
+        tag1=$(cat version.json | jq  ".dart_simple_live")
+        tag2=$(cat version.json | jq  ".Bangumi")
+
+        latest_tag1=$(curl -s https://api.github.com/repos/xiaoyaocz/dart_simple_live/releases/latest | jq  '.tag_name | ltrimstr("v")')
+        latest_tag2=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq  '.tag_name | ltrimstr("v")')
         
+        if [ "$tag1" != "$latest_tag1" ]; then
+          echo "dart_simple_live version is outdated. Updating..."
+
+          cat apps.json | jq --arg tag1 "$tag1" '.apps += [{
+            "name": "dart_simple_live",
+            "bundleIdentifier": "com.xycz.simple-live",
+            "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v\($tag1)/ios_no_sign.ipa",
+            "version": $tag1
+          }]'  > apps.json
+
+          cat version.json | jq --arg latest_tag1 "$latest_tag1" '.dart_simple_live = $latest_tag1' > version.json
+
+        else
+          echo "dart_simple_live version is up to date."
+        fi
+
+        if [ "$tag2" != "$latest_tag2" ]; then
+          echo "Bangumi version is outdated. Updating..."
+
+          cat apps.json | jq --arg tag2 "$tag2" '.apps += [{
+            "name": "Bangumi",
+            "bundleIdentifier": "tv.bangumi.czy0729",
+            "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/\($tag2)/bangumi_v\($tag2)_archive.ipa",
+            "version": $tag2
+          }]'  > apps.json
+
+          cat version.json | jq --arg latest_tag2 "$latest_tag2" '.Bangumi = $latest_tag2' > version.json
+
+        else
+          echo "Bangumi version is up to date."
+        fi
+
+        git add .&&git commit -m "update"&&git push
