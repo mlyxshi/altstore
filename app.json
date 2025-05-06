@@ -1,31 +1,16 @@
 {
-    "name": "OwO Source",
-    "identifier": "network.owo.repo",
-    "sourceURL": "https://repo.owo.network",
-    "iconURL": "https://r2.qwq.mx/files/owo-logo3.png",
-    "sourceicon": "https://r2.qwq.mx/files/owo-logo3.png",
-    "website": "https://owo.network",
-    "subtitle": "Biggest Updated Modified IPA Library for Sideloading - OwO.Network",
-    "META": {
-        "repoName": "OwO Source",
-        "repoIcon": "https://r2.qwq.mx/files/owo-logo3.png"
-    },
+    "name": "mlyxshi",
+    "identifier": "com.mlyxshi.source",
     "apps": [
-        {
-            "name": "Instagram",
-            "realBundleID": "com.burbn.instagram",
-            "bundleID": "com.burbn.instagram",
-            "bundleIdentifier": "com.burbn.instagram",
-            "version": "378.0.0",
-            "versionDate": "2025-05-01",
-            "fullDate": "20250501222732",
-            "size": 267498787,
-            "down": "https://github.com/OwO-Network/Repo/releases/download/2025-05-01/Instagram_378.0.0_Regram_1.0-b29_%40repo.owo.network.ipa",
-            "downloadURL": "https://github.com/OwO-Network/Repo/releases/download/2025-05-01/Instagram_378.0.0_Regram_1.0-b29_%40repo.owo.network.ipa",
-            "developerName": "",
-            "localizedDescription": "Injected with Regram 1.0-b29",
-            "icon": "https://raw.githubusercontent.com/owo-network/Repo/main/icons/com.burbn.instagram.png",
-            "iconURL": "https://raw.githubusercontent.com/owo-network/Repo/main/icons/com.burbn.instagram.png"
-        }
+      {
+        "name": "EeveeSpotify",
+        "bundleIdentifier": "com.spotify.client",
+        "subtitle": "Spotify v9.0.40 injected with EeveeSpotify",
+        "localizedDescription": "Spotify v9.0.40 injected with EeveeSpotify",
+        "downloadURL": "https://github.com/whoeevee/EeveeSpotify/releases/download/swift5.9.6/EeveeSpotify-5.9.6-9.0.40.ipa",
+        "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0c/1f/61/0c1f6144-af80-f395-3204-1d14fd8b2be7/AppIcon-0-0-1x_U007emarketing-0-6-0-0-85-220.png/512x512bb.jpg",
+        "version": "9.0.40",
+        "size": 84760324
+      }
     ]
-}
+  }
