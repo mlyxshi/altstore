@@ -23,11 +23,11 @@ jobs:
         if [ "$tag1" != "$latest_tag1" ]; then
           echo "dart_simple_live version is outdated. Updating..."
 
-          cat apps.json | jq --arg tag1 "$tag1" '.apps += [{
+          cat apps.json | jq --arg latest_tag1 "$latest_tag1" '.apps += [{
             "name": "dart_simple_live",
             "bundleIdentifier": "com.xycz.simple-live",
-            "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v\($tag1)/ios_no_sign.ipa",
-            "version": $tag1
+            "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v\($latest_tag1)/ios_no_sign.ipa",
+            "version": $latest_tag1
           }]'  > apps.json
 
           cat version.json | jq --arg latest_tag1 "$latest_tag1" '.dart_simple_live = $latest_tag1' > version.json
@@ -39,14 +39,25 @@ jobs:
         if [ "$tag2" != "$latest_tag2" ]; then
           echo "Bangumi version is outdated. Updating..."
 
-          cat apps.json | jq --arg tag2 "$tag2" '.apps += [{
-            "name": "Bangumi",
-            "bundleIdentifier": "tv.bangumi.czy0729",
-            "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/\($tag2)/bangumi_v\($tag2)_archive.ipa",
-            "version": $tag2
-          }]'  > apps.json
+          latest_tag2=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq -r '.tag_name | ltrimstr("v")')
 
-          cat version.json | jq --arg latest_tag2 "$latest_tag2" '.Bangumi = $latest_tag2' > version.json
+          url="https://github.com/czy0729/Bangumi/releases/download/${latest_tag2}/bangumi_v${latest_tag2}_archive.ipa"
+
+          # Check if the file exists
+          status_code=$(curl -o /dev/null -s -w "%{http_code}" --head "$url")
+
+          if [ "$status_code" = "404" ]; then
+              echo "❌ File does not exist"
+          else
+            cat apps.json | jq --arg latest_tag2 "$latest_tag2" '.apps += [{
+              "name": "Bangumi",
+              "bundleIdentifier": "tv.bangumi.czy0729",
+              "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/\($latest_tag2)/bangumi_v\($latest_tag2)_archive.ipa",
+              "version": $latest_tag2
+            }]'  > apps.json
+
+            cat version.json | jq --arg latest_tag2 "$latest_tag2" '.Bangumi = $latest_tag2' > version.json
+          fi
 
         else
           echo "Bangumi version is up to date."
