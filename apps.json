@@ -13,6 +13,12 @@
         "bundleIdentifier": "tv.bangumi.czy0729",
         "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/8.20.2/bangumi_v8.20.3_archive.ipa",
         "version": "8.20.2"
+      },
+      {
+        "name": "animeko",
+        "bundleIdentifier": "org.openani.Animeko",
+        "downloadURL": "https://github.com/open-ani/animeko/releases/download/v4.10.1/ani-4.10.1.ipa",
+        "version": "4.10.1"
       }
     ]
   }

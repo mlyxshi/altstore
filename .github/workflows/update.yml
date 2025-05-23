@@ -16,9 +16,11 @@ jobs:
     - run: |
         tag1=$(cat version.json | jq  ".dart_simple_live")
         tag2=$(cat version.json | jq  ".Bangumi")
+        tag3=$(cat version.json | jq  ".animeko")
 
         latest_tag1=$(curl -s https://api.github.com/repos/xiaoyaocz/dart_simple_live/releases/latest | jq  '.tag_name | ltrimstr("v")')
         latest_tag2=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq  '.tag_name | ltrimstr("v")')
+        latest_tag3=$(curl -s https://api.github.com/repos/Animeko/Animeko/releases/latest | jq  '.tag_name | ltrimstr("v")')
         
         if [ "$tag1" != "$latest_tag1" ]; then
           echo "dart_simple_live version is outdated. Updating..."
@@ -61,6 +63,22 @@ jobs:
 
         else
           echo "Bangumi version is up to date."
+        fi
+
+        if [ "$tag3" != "$latest_tag3" ]; then
+          echo "animeko version is outdated. Updating..."
+
+          cat apps.json | jq --arg latest_tag3 "$latest_tag3" '.apps += [{
+            "name": "animeko",
+            "bundleIdentifier": "org.openani.Animeko",
+            "downloadURL": "https://github.com/open-ani/animeko/releases/download/v\($latest_tag3)/ani-\($latest_tag3).ipa",
+            "version": $latest_tag3
+          }]'  > apps.json
+
+          cat version.json | jq --arg latest_tag3 "$latest_tag3" '.animeko= $latest_tag3' > version.json
+
+        else
+          echo "animeko version is up to date."
         fi
 
         
