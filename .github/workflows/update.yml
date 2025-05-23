@@ -20,8 +20,8 @@ jobs:
 
         latest_tag1=$(curl -s https://api.github.com/repos/xiaoyaocz/dart_simple_live/releases/latest | jq  '.tag_name | ltrimstr("v")')
         latest_tag2=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq  '.tag_name | ltrimstr("v")')
-        latest_tag3=$(curl -s https://api.github.com/repos/Animeko/Animeko/releases/latest | jq  '.tag_name | ltrimstr("v")')
-        
+        latest_tag3=$(curl -s https://api.github.com/repos/open-ani/animeko/releases/latest | jq  '.tag_name | ltrimstr("v")')
+
         if [ "$tag1" != "$latest_tag1" ]; then
           echo "dart_simple_live version is outdated. Updating..."
 
