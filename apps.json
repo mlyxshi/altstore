@@ -1,24 +1,24 @@
 {
-    "name": "mlyxdev",
-    "identifier": "com.mlyxdev.source",
-    "apps": [
-      {
-        "name": "dart_simple_live",
-        "bundleIdentifier": "com.xycz.simple-live",
-        "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v1.8.3/ios_no_sign.ipa",
-        "version": "1.8.3"
-      },
-      {
-        "name": "Bangumi",
-        "bundleIdentifier": "tv.bangumi.czy0729",
-        "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/8.20.2/bangumi_v8.20.3_archive.ipa",
-        "version": "8.20.2"
-      },
-      {
-        "name": "animeko",
-        "bundleIdentifier": "org.openani.Animeko",
-        "downloadURL": "https://github.com/open-ani/animeko/releases/download/v4.10.1/ani-4.10.1.ipa",
-        "version": "4.10.1"
-      }
-    ]
-  }
+  "name": "mlyxdev",
+  "identifier": "com.mlyxdev.source",
+  "apps": [
+    {
+      "name": "dart_simple_live",
+      "bundleIdentifier": "com.xycz.simple-live",
+      "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v1.8.3/ios_no_sign.ipa",
+      "version": "1.8.3"
+    },
+    {
+      "name": "Bangumi",
+      "bundleIdentifier": "tv.bangumi.czy0729",
+      "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/8.20.2/bangumi_v8.20.3_archive.ipa",
+      "version": "8.20.2"
+    },
+    {
+      "name": "animeko",
+      "bundleIdentifier": "org.openani.Animeko",
+      "downloadURL": "https://github.com/open-ani/animeko/releases/download/v4.10.1/ani-4.10.1.ipa",
+      "version": "4.10.1"
+    }
+  ]
+}
