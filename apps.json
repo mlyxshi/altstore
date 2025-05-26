@@ -6,18 +6,21 @@
     {
       "name": "dart_simple_live",
       "bundleIdentifier": "com.xycz.simple-live",
+      "iconURL": "https://github.com/xiaoyaocz/dart_simple_live/blob/master/assets/logo.png?raw=true",
       "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v1.8.3/ios_no_sign.ipa",
       "version": "1.8.3"
     },
     {
       "name": "Bangumi",
       "bundleIdentifier": "tv.bangumi.czy0729",
+      "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
       "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/8.20.2/bangumi_v8.20.3_archive.ipa",
       "version": "8.20.2"
     },
     {
       "name": "animeko",
       "bundleIdentifier": "org.openani.Animeko",
+      "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
       "downloadURL": "https://github.com/open-ani/animeko/releases/download/v4.10.1/ani-4.10.1.ipa",
       "version": "4.10.1"
     }

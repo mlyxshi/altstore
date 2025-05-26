@@ -28,6 +28,7 @@ jobs:
           cat apps.json | jq --arg latest_tag1 "$latest_tag1" '.apps += [{
             "name": "dart_simple_live",
             "bundleIdentifier": "com.xycz.simple-live",
+            "iconURL": "https://github.com/xiaoyaocz/dart_simple_live/blob/master/assets/logo.png?raw=true",
             "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v\($latest_tag1)/ios_no_sign.ipa",
             "version": $latest_tag1
           }]'  > apps.json
@@ -54,6 +55,7 @@ jobs:
             cat apps.json | jq --arg latest_tag2 "$latest_tag2" '.apps += [{
               "name": "Bangumi",
               "bundleIdentifier": "tv.bangumi.czy0729",
+              "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
               "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/\($latest_tag2)/bangumi_v\($latest_tag2)_archive.ipa",
               "version": $latest_tag2
             }]'  > apps.json
@@ -71,6 +73,7 @@ jobs:
           cat apps.json | jq --arg latest_tag3 "$latest_tag3" '.apps += [{
             "name": "animeko",
             "bundleIdentifier": "org.openani.Animeko",
+            "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
             "downloadURL": "https://github.com/open-ani/animeko/releases/download/v\($latest_tag3)/ani-\($latest_tag3).ipa",
             "version": $latest_tag3
           }]'  > apps.json
