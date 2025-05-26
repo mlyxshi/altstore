@@ -1,6 +1,7 @@
 {
   "name": "mlyxdev",
   "identifier": "com.mlyxdev.source",
+  "iconURL": "https://nixos.org/favicon.ico",
   "apps": [
     {
       "name": "dart_simple_live",
