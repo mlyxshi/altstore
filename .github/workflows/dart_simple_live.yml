@@ -28,9 +28,11 @@ jobs:
             "iconURL": "https://github.com/xiaoyaocz/dart_simple_live/blob/master/assets/logo.png?raw=true",
             "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v\($latest_tag)/ios_no_sign.ipa",
             "version": $latest_tag
-          }]'  > apps.json
+          }]'   > apps.tmp
+          mv apps.tmp apps.json
 
-          cat version.json | jq --arg latest_tag "$latest_tag" '.dart_simple_live = $latest_tag' > version.json
+          cat version.json | jq --arg latest_tag "$latest_tag" '.dart_simple_live = $latest_tag' > version.tmp 
+          mv version.tmp version.json
 
         else
           echo "dart_simple_live version is up to date."

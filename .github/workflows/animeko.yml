@@ -28,9 +28,11 @@ jobs:
             "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
             "downloadURL": "https://github.com/open-ani/animeko/releases/download/v\($latest_tag)/ani-\($latest_tag).ipa",
             "version": $latest_tag
-          }]'  > apps.json
+          }]'  > apps.tmp
+          mv apps.tmp apps.json
 
-          cat version.json | jq --arg latest_tag "$latest_tag" '.animeko= $latest_tag' > version.json
+          cat version.json | jq --arg latest_tag "$latest_tag" '.animeko= $latest_tag' > version.tmp 
+          mv version.tmp version.json
 
         else
           echo "animeko version is up to date."
