@@ -4,6 +4,13 @@
   "iconURL": "https://nixos.org/favicon.ico",
   "apps": [
     {
+      "name": "animeko",
+      "bundleIdentifier": "org.openani.Animeko",
+      "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
+      "downloadURL": "https://github.com/open-ani/animeko/releases/download/v4.11.1/ani-4.11.1.ipa",
+      "version": "4.11.1"
+    },
+    {
       "name": "dart_simple_live",
       "bundleIdentifier": "com.xycz.simple-live",
       "iconURL": "https://github.com/xiaoyaocz/dart_simple_live/blob/master/assets/logo.png?raw=true",
