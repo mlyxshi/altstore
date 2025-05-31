@@ -14,8 +14,8 @@ jobs:
     - uses: actions/checkout@master
 
     - run: |
-        tag=$(cat version.json | jq  ".Bangumi")
-        latest_tag=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq  '.tag_name | ltrimstr("v")')
+        tag=$(cat version.json | jq -r ".Bangumi")
+        latest_tag=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq -r '.tag_name | ltrimstr("v")')
 
         echo "Bangumi version: $tag/$latest_tag"
 
