@@ -1,0 +1,51 @@
+name: "animeko"
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - run: |
+        tag=$(cat version.json | jq  ".animeko")
+        latest_tag=$(curl -s https://api.github.com/repos/open-ani/animeko/releases/latest | jq  '.tag_name | ltrimstr("v")')
+
+        echo "animeko version: $tag/$latest_tag"
+     
+        if [ "$tag" != "$latest_tag" ]; then
+          echo "animeko version is outdated. Updating..."
+
+          cat apps.json | jq --arg latest_tag "$latest_tag" '.apps += [{
+            "name": "animeko",
+            "bundleIdentifier": "org.openani.Animeko",
+            "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
+            "downloadURL": "https://github.com/open-ani/animeko/releases/download/v\($latest_tag)/ani-\($latest_tag).ipa",
+            "version": $latest_tag
+          }]'  > apps.json
+
+          cat version.json | jq --arg latest_tag "$latest_tag" '.animeko= $latest_tag' > version.json
+
+        else
+          echo "animeko version is up to date."
+        fi
+
+        
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        if git diff --quiet; then
+          echo "No changes to commit."
+        else
+          git add .
+          git commit -m "update app"
+          git push
+        fi
