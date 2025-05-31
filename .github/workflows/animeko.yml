@@ -22,13 +22,13 @@ jobs:
         if [ "$tag" != "$latest_tag" ]; then
           echo "animeko version is outdated. Updating..."
 
-          cat apps.json | jq --arg latest_tag "$latest_tag" '.apps += [{
+          cat apps.json | jq --arg latest_tag "$latest_tag" '.apps = [{
             "name": "animeko",
             "bundleIdentifier": "org.openani.Animeko",
             "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
             "downloadURL": "https://github.com/open-ani/animeko/releases/download/v\($latest_tag)/ani-\($latest_tag).ipa",
             "version": $latest_tag
-          }]'  > apps.tmp
+          }]' + .apps  > apps.tmp
           mv apps.tmp apps.json
 
           cat version.json | jq --arg latest_tag "$latest_tag" '.animeko= $latest_tag' > version.tmp 

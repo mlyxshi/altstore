@@ -33,13 +33,13 @@ jobs:
             echo "❌ File does not exist"
           else
             echo "Bangumi Updating..."
-            cat apps.json | jq --arg latest_tag "$latest_tag" '.apps += [{
+            cat apps.json | jq --arg latest_tag "$latest_tag" '.apps = [{
               "name": "Bangumi",
               "bundleIdentifier": "tv.bangumi.czy0729",
               "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
               "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/\($latest_tag)/bangumi_v\($latest_tag)_archive.ipa",
               "version": $latest_tag
-            }]'   > apps.tmp
+            }]' + .apps  > apps.tmp
             mv apps.tmp apps.json
 
             cat version.json | jq --arg latest_tag "$latest_tag" '.Bangumi = $latest_tag' > version.tmp 
