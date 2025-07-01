@@ -4,6 +4,13 @@
   "iconURL": "https://nixos.org/favicon.ico",
   "apps": [
     {
+      "name": "animeko",
+      "bundleIdentifier": "org.openani.Animeko",
+      "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
+      "downloadURL": "https://github.com/open-ani/animeko/releases/download/vnull/ani-null.ipa",
+      "version": "null"
+    },
+    {
       "name": "Bangumi",
       "bundleIdentifier": "tv.bangumi.czy0729",
       "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
