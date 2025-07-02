@@ -7,6 +7,13 @@
       "name": "animeko",
       "bundleIdentifier": "org.openani.Animeko",
       "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
+      "downloadURL": "https://github.com/open-ani/animeko/releases/download/v4.11.1/ani-4.11.1.ipa",
+      "version": "4.11.1"
+    },
+    {
+      "name": "animeko",
+      "bundleIdentifier": "org.openani.Animeko",
+      "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
       "downloadURL": "https://github.com/open-ani/animeko/releases/download/vnull/ani-null.ipa",
       "version": "null"
     },
