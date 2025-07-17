@@ -19,7 +19,7 @@ jobs:
 
         echo "dart_simple_live version: $tag/$latest_tag"
 
-        if [ "$latest_tag" != "null" ] || [ "$tag" != "$latest_tag" ]; then
+        if [ "$latest_tag" != "null" ] && [ "$tag" != "$latest_tag" ]; then
           echo "dart_simple_live version is outdated. Updating..."
 
           cat apps.json | jq --arg latest_tag "$latest_tag" '.apps = [{

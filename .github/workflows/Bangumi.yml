@@ -19,7 +19,7 @@ jobs:
 
         echo "Bangumi version: $tag/$latest_tag"
 
-        if [ "$latest_tag" != "null" ] || [ "$tag" != "$latest_tag" ]; then
+        if [ "$latest_tag" != "null" ] && [ "$tag" != "$latest_tag" ]; then
           echo "Bangumi version is outdated"
 
           latest_tag=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq -r '.tag_name | ltrimstr("v")')

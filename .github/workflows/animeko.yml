@@ -19,7 +19,7 @@ jobs:
 
         echo "animeko version: $tag/$latest_tag"
      
-        if [ "$latest_tag" != "null" ] || [ "$tag" != "$latest_tag" ]; then
+        if [ "$latest_tag" != "null" ] && [ "$tag" != "$latest_tag" ]; then
           echo "animeko version is outdated. Updating..."
 
           cat apps.json | jq --arg latest_tag "$latest_tag" '.apps = [{
