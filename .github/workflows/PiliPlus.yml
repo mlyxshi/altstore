@@ -1,4 +1,4 @@
-name: "animeko"
+name: "PiliPlus"
 on:
   schedule:
     - cron: "0 3 * * *"
