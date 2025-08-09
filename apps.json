@@ -4,13 +4,6 @@
   "iconURL": "https://nixos.org/favicon.ico",
   "apps": [
     {
-      "name": "dart_simple_live",
-      "bundleIdentifier": "com.xycz.simple-live",
-      "iconURL": "https://github.com/xiaoyaocz/dart_simple_live/blob/master/assets/logo.png?raw=true",
-      "downloadURL": "https://github.com/xiaoyaocz/dart_simple_live/releases/download/v1.8.6/ios_no_sign.ipa",
-      "version": "1.8.6"
-    },
-    {
       "name": "Bangumi",
       "bundleIdentifier": "tv.bangumi.czy0729",
       "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
