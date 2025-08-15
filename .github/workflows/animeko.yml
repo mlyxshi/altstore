@@ -15,7 +15,7 @@ jobs:
 
     - run: |
         tag=$(cat version.json | jq -r ".animeko")
-        latest_tag=$(curl -s https://api.github.com/repos/open-ani/animeko/releases/latest | jq  -r '.tag_name | ltrimstr("v")')
+        latest_tag=$(curl -s https://api.github.com/repos/open-ani/animeko/releases/latest | jq  -r '.name')
 
         echo "animeko version: $tag/$latest_tag"
      

@@ -15,7 +15,7 @@ jobs:
 
     - run: |
         tag=$(cat version.json | jq -r ".PiliPlus")
-        latest_tag=$(curl -s https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/latest | jq  -r '.tag_name | ltrimstr("v")')
+        latest_tag=$(curl -s https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/latest | jq  -r '.name')
 
         echo "PiliPlus version: $tag/$latest_tag"
      
