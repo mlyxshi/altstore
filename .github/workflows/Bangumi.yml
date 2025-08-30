@@ -31,12 +31,16 @@ jobs:
             echo "❌ File does not exist"
           else
             echo "Bangumi Updating..."
-            cat apps.json | jq --arg latest_tag "$latest_tag" '.apps = [{
+
+            DATE=$(date +%F)
+
+            cat apps.json | jq --arg latest_tag "$latest_tag" --arg DATE "$DATE" '.apps = [{
               "name": "Bangumi",
               "bundleIdentifier": "tv.bangumi.czy0729",
               "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
               "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/\($latest_tag)/bangumi_v\($latest_tag)_archive.ipa",
-              "version": $latest_tag
+              "version": $latest_tag,
+              "versionDate": $DATE
             }] + .apps'  > apps.tmp
             mv apps.tmp apps.json
 
