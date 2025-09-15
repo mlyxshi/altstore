@@ -4,6 +4,14 @@
   "iconURL": "https://nixos.org/favicon.ico",
   "apps": [
     {
+      "name": "Bangumi",
+      "bundleIdentifier": "tv.bangumi.czy0729",
+      "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
+      "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/8.24.6/bangumi_v8.24.6_archive.ipa",
+      "version": "8.24.6",
+      "versionDate": "2025-09-15"
+    },
+    {
       "name": "PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "iconURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/blob/main/assets/images/logo/logo.png?raw=true",
