@@ -7,6 +7,14 @@
       "name": "animeko",
       "bundleIdentifier": "org.openani.Animeko",
       "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
+      "downloadURL": "https://github.com/open-ani/animeko/releases/download/v5.0.1/ani-5.0.1.ipa",
+      "version": "5.0.1",
+      "versionDate": "2025-09-18"
+    },
+    {
+      "name": "animeko",
+      "bundleIdentifier": "org.openani.Animeko",
+      "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
       "downloadURL": "https://github.com/open-ani/animeko/releases/download/v5.0.0/ani-5.0.0.ipa",
       "version": "5.0.0",
       "versionDate": "2025-09-18"
