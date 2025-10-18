@@ -7,6 +7,14 @@
       "name": "PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "iconURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/blob/main/assets/images/logo/logo.png?raw=true",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.4.12/ios-release-no-sign.ipa",
+      "version": "1.1.4.12",
+      "versionDate": "2025-10-18"
+    },
+    {
+      "name": "PiliPlus",
+      "bundleIdentifier": "com.example.piliplus",
+      "iconURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/blob/main/assets/images/logo/logo.png?raw=true",
       "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.4.11/ios-release-no-sign.ipa",
       "version": "1.1.4.11",
       "versionDate": "2025-10-17"
