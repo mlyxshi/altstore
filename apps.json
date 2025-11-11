@@ -4,6 +4,14 @@
   "iconURL": "https://nixos.org/favicon.ico",
   "apps": [
     {
+      "name": "PiliPlus",
+      "bundleIdentifier": "com.example.piliplus",
+      "iconURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/blob/main/assets/images/logo/logo.png?raw=true",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5-pre/ios-release-no-sign.ipa",
+      "version": "1.1.5-pre",
+      "versionDate": "2025-11-11"
+    },
+    {
       "name": "animeko",
       "bundleIdentifier": "org.openani.Animeko",
       "iconURL": "https://github.com/open-ani/animeko/blob/main/.github/assets/logo.png?raw=true",
