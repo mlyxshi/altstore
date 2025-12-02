@@ -1,0 +1,56 @@
+name: "haka_comic"
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - run: |
+        tag=$(cat version.json | jq -r ".haka_comic")
+        latest_tag=$(curl -s https://api.github.com/repos/raoxwup/haka_comic/releases/latest | jq  -r ".tag_name")
+
+        echo "haka_comic version: $tag/$latest_tag"
+     
+        if [ "$latest_tag" != "null" ] && [ "$tag" != "$latest_tag" ]; then
+          echo "haka_comic version is outdated. Updating..."
+
+          DATE=$(date +%F)
+
+          cat apps.json | jq --arg latest_tag "$latest_tag" --arg DATE "$DATE" '.apps = [{
+            "name": "haka_comic",
+            "bundleIdentifier": "com.github.raoxwup.hakacomic",
+            "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
+            "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/\($latest_tag)/no-codesign-ios-v\($latest_tag).ipa",
+            "version": $latest_tag,
+            "versionDate": $DATE
+          }] + .apps'  > apps.tmp
+          mv apps.tmp apps.json
+
+          cat version.json | jq --arg latest_tag "$latest_tag" '.haka_comic= $latest_tag' > version.tmp 
+          mv version.tmp version.json
+
+        else
+          echo "haka_comic version is up to date."
+        fi
+
+        
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        if git diff --quiet; then
+          echo "No changes to commit."
+        else
+          git add .
+          git commit -m "update haka_comic"
+          git push
+        fi

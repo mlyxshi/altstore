@@ -1,0 +1,15 @@
+{
+  "name": "mlyxdev",
+  "identifier": "com.mlyxdev.source",
+  "iconURL": "https://nixos.org/favicon.ico",
+  "apps": [
+    {
+      "name": "haka_comic",
+      "bundleIdentifier": "com.github.raoxwup.hakacomic",
+      "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
+      "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/1.0.6/no-codesign-ios-v1.0.6.ipa",
+      "version": "1.0.5",
+      "versionDate": "2025-12-01"
+    }
+  ]
+}

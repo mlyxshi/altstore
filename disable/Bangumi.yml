@@ -1,0 +1,69 @@
+name: "Bangumi"
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - run: |
+        tag=$(cat version.json | jq -r ".Bangumi")
+        latest_tag=$(curl -s https://api.github.com/repos/czy0729/Bangumi/releases/latest | jq -r '.name')
+
+        echo "Bangumi version: $tag/$latest_tag"
+
+        if [ "$latest_tag" != "null" ] && [ "$tag" != "$latest_tag" ]; then
+          echo "Bangumi version is outdated"
+
+          url="https://github.com/czy0729/Bangumi/releases/download/${latest_tag}/bangumi_v${latest_tag}_archive.ipa"
+
+          # Check if the file exists
+          status_code=$(curl -o /dev/null -s -w "%{http_code}" --head "$url")
+
+          if [ "$status_code" = "404" ]; then
+            echo "❌ File does not exist"
+          else
+            echo "Bangumi Updating..."
+
+            DATE=$(date +%F)
+
+            cat apps.json | jq --arg latest_tag "$latest_tag" --arg DATE "$DATE" '.apps = [{
+              "name": "Bangumi",
+              "bundleIdentifier": "tv.bangumi.czy0729",
+              "iconURL": "https://github.com/czy0729/Bangumi/blob/master/src/assets/images/favicon.ico?raw=true",
+              "downloadURL": "https://github.com/czy0729/Bangumi/releases/download/\($latest_tag)/bangumi_v\($latest_tag)_archive.ipa",
+              "version": $latest_tag,
+              "versionDate": $DATE
+            }] + .apps'  > apps.tmp
+            mv apps.tmp apps.json
+
+            cat version.json | jq --arg latest_tag "$latest_tag" '.Bangumi = $latest_tag' > version.tmp 
+            mv version.tmp version.json
+
+          fi
+
+        else
+          echo "Bangumi version is up to date."
+        fi
+
+
+        
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        if git diff --quiet; then
+          echo "No changes to commit."
+        else
+          git add .
+          git commit -m "update Bangumi"
+          git push
+        fi
