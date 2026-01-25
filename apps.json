@@ -7,6 +7,14 @@
       "name": "haka_comic",
       "bundleIdentifier": "com.github.raoxwup.hakacomic",
       "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
+      "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/v1.1.1/no-codesign-ios-vv1.1.1.ipa",
+      "version": "v1.1.1",
+      "versionDate": "2026-01-25"
+    },
+    {
+      "name": "haka_comic",
+      "bundleIdentifier": "com.github.raoxwup.hakacomic",
+      "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
       "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/1.1.0/no-codesign-ios-v1.1.0.ipa",
       "version": "1.1.0",
       "versionDate": "2026-01-02"
