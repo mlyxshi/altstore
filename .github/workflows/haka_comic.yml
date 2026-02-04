@@ -28,7 +28,7 @@ jobs:
             "name": "haka_comic",
             "bundleIdentifier": "com.github.raoxwup.hakacomic",
             "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
-            "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/\($latest_tag)/no-codesign-ios-v\($latest_tag).ipa",
+            "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/\($latest_tag)/no-codesign-ios-\($latest_tag).ipa",
             "version": $latest_tag,
             "versionDate": $DATE
           }] + .apps'  > apps.tmp

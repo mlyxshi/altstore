@@ -3,45 +3,5 @@
   "identifier": "com.mlyxdev.source",
   "iconURL": "https://nixos.org/favicon.ico",
   "apps": [
-    {
-      "name": "haka_comic",
-      "bundleIdentifier": "com.github.raoxwup.hakacomic",
-      "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
-      "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/v1.1.1/no-codesign-ios-vv1.1.1.ipa",
-      "version": "v1.1.1",
-      "versionDate": "2026-01-25"
-    },
-    {
-      "name": "haka_comic",
-      "bundleIdentifier": "com.github.raoxwup.hakacomic",
-      "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
-      "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/1.1.0/no-codesign-ios-v1.1.0.ipa",
-      "version": "1.1.0",
-      "versionDate": "2026-01-02"
-    },
-    {
-      "name": "haka_comic",
-      "bundleIdentifier": "com.github.raoxwup.hakacomic",
-      "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
-      "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/1.0.8/no-codesign-ios-v1.0.8.ipa",
-      "version": "1.0.8",
-      "versionDate": "2025-12-22"
-    },
-    {
-      "name": "haka_comic",
-      "bundleIdentifier": "com.github.raoxwup.hakacomic",
-      "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
-      "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/1.0.7/no-codesign-ios-v1.0.7.ipa",
-      "version": "1.0.7",
-      "versionDate": "2025-12-06"
-    },
-    {
-      "name": "haka_comic",
-      "bundleIdentifier": "com.github.raoxwup.hakacomic",
-      "iconURL": "https://github.com/raoxwup/haka_comic/blob/main/assets/icons/ios/Light.png?raw=true",
-      "downloadURL": "https://github.com/raoxwup/haka_comic/releases/download/1.0.6/no-codesign-ios-v1.0.6.ipa",
-      "version": "1.0.6",
-      "versionDate": "2025-12-02"
-    }
   ]
 }
